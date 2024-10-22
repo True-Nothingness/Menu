@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Menu</string>
+    <string name="main_dish">Main Dish</string>
+    <string name="side_dish">Side Dish</string>
+    <string name="dessert">Dessert</string>
+    <string name="drink">Drink</string>
+    <string name="pizza1">Cheese Pizza</string>
+    <string name="pizza2">Pepperoni Pizza</string>
+    <string name="pizza3">BBQ Chicken Pizza</string>
+    <string name="pasta1">Alfredo Pasta</string>
+    <string name="pasta2">Carbonara Pasta</string>
+    <string name="pasta3">Penne Pasta</string>
+    <string name="soup1">Tomato Soup</string>
+    <string name="soup2">Chicken Soup</string>
+    <string name="soup3">Vegetable Soup</string>
+    <string name="salad1">Caesar Salad</string>
+    <string name="salad2">Greek Salad</string>
+    <string name="salad3">Spinach Salad</string>
+    <string name="cake1">Chocolate Cake</string>
+    <string name="cake2">Vanilla Cake</string>
+    <string name="cake3">Strawberry Cake</string>
+    <string name="pie1">Apple Pie</string>
+    <string name="pie2">Cherry Pie</string>
+    <string name="pie3">Pumpkin Pie</string>
+    <string name="coffee1">Espresso</string>
+    <string name="coffee2">Cappuccino</string>
+    <string name="coffee3">Latte</string>
+    <string name="soda1">Pepsi</string>
+    <string name="soda2">Sprite</string>
+    <string name="soda3">Fanta</string>
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="checkout">Checkout</string>
+    <string name="finish">Finish Order</string>
+</resources>

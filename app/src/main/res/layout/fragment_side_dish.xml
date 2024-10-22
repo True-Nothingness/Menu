@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainDishFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/side_dish"
+        android:textSize="40sp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/teal_200"/>
+
+    <CheckBox
+        android:id="@+id/sideDish1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salad1"
+        android:layout_marginTop="120dp"
+        android:textSize="20sp"
+        android:textColor="@color/red"/>
+    <CheckBox
+        android:id="@+id/sideDish2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salad2"
+        android:layout_marginTop="190dp"
+        android:textSize="20sp"
+        android:textColor="@color/red"/>
+    <CheckBox
+        android:id="@+id/sideDish3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salad3"
+        android:layout_marginTop="260dp"
+        android:textSize="20sp"
+        android:textColor="@color/red"/>
+    <CheckBox
+        android:id="@+id/sideDish4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/soup1"
+        android:layout_marginTop="330dp"
+        android:textSize="20sp"
+        android:textColor="@color/red"/>
+    <CheckBox
+        android:id="@+id/sideDish5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/soup2"
+        android:layout_marginTop="400dp"
+        android:textSize="20sp"
+        android:textColor="@color/red"/>
+    <CheckBox
+        android:id="@+id/sideDish6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/soup3"
+        android:layout_marginTop="470dp"
+        android:textSize="20sp"
+        android:textColor="@color/red"/>
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_marginTop="550dp"
+        android:layout_marginStart="250dp"/>
+
+    <Button
+        android:id="@+id/previousBtn"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/prev"
+        android:layout_marginTop="550dp"
+        android:layout_marginStart="40dp"/>
+
+</FrameLayout>

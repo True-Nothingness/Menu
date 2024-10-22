@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/mainDishFragment">
+
+    <fragment
+        android:id="@+id/mainDishFragment"
+        android:name="com.light.menu.MainDishFragment"
+        android:label="Main Dish">
+        <action
+            android:id="@+id/mainDish_to_sideDish"
+            app:destination="@id/sideDishFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sideDishFragment"
+        android:name="com.light.menu.SideDishFragment"
+        android:label="Side Dish">
+        <action
+            android:id="@+id/sideDish_to_dessertFragment"
+            app:destination="@id/dessertFragment" />
+        <action
+            android:id="@+id/sideDish_to_mainDishFragment"
+            app:destination="@id/mainDishFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dessertFragment"
+        android:name="com.light.menu.DessertFragment"
+        android:label="Dessert">
+        <action
+            android:id="@+id/dessert_to_drinkFragment"
+            app:destination="@id/drinkFragment" />
+        <action
+            android:id="@+id/dessert_to_sideDishFragment"
+            app:destination="@id/sideDishFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/drinkFragment"
+        android:name="com.light.menu.DrinkFragment"
+        android:label="Drink">
+        <action
+            android:id="@+id/drink_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+        <action
+            android:id="@+id/drink_to_dessertFragment"
+            app:destination="@id/dessertFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.light.menu.CheckoutFragment"
+        android:label="Checkout">
+        <action
+            android:id="@+id/checkout_to_drinkFragment"
+            app:destination="@id/drinkFragment" />
+    </fragment>
+</navigation>
