@@ -5,22 +5,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class OrderViewModel : ViewModel() {
-    private val _selectedFoods = MutableLiveData<MutableList<String>>(mutableListOf())
-    val selectedFoods: LiveData<MutableList<String>> = _selectedFoods
+    private val _selectedFoods = MutableLiveData<List<String>>(emptyList()) // Use List<String> instead of MutableList
+    val selectedFoods: LiveData<List<String>> = _selectedFoods
 
     fun addFood(food: String) {
-        _selectedFoods.value?.let {
-            if (!it.contains(food)) {
-                it.add(food)
-                _selectedFoods.value = it
-            }
+        _selectedFoods.value = _selectedFoods.value?.toMutableList()?.apply {
+            if (!contains(food)) add(food)
         }
     }
 
     fun removeFood(food: String) {
-        _selectedFoods.value?.let {
-            it.remove(food)
-            _selectedFoods.value = it
-        }
+        _selectedFoods.value = _selectedFoods.value?.toMutableList()?.apply { remove(food) }
     }
 }

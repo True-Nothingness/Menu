@@ -12,71 +12,50 @@ import androidx.navigation.fragment.findNavController
 
 class SideDishFragment : Fragment() {
     private lateinit var orderViewModel: OrderViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout
+    ): View {
         val view = inflater.inflate(R.layout.fragment_side_dish, container, false)
-
         orderViewModel = ViewModelProvider(requireActivity())[OrderViewModel::class.java]
 
         val sideDish1 = view.findViewById<CheckBox>(R.id.sideDish1)
-        sideDish1.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                orderViewModel.addFood(resources.getString(R.string.salad1))
-            } else {
-                orderViewModel.removeFood(resources.getString(R.string.salad1))
-            }
-        }
         val sideDish2 = view.findViewById<CheckBox>(R.id.sideDish2)
-        sideDish2.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                orderViewModel.addFood(resources.getString(R.string.salad2))
-            } else {
-                orderViewModel.removeFood(resources.getString(R.string.salad2))
-            }
-        }
         val sideDish3 = view.findViewById<CheckBox>(R.id.sideDish3)
-        sideDish3.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                orderViewModel.addFood(resources.getString(R.string.salad3))
-            } else {
-                orderViewModel.removeFood(resources.getString(R.string.salad3))
-            }
-        }
         val sideDish4 = view.findViewById<CheckBox>(R.id.sideDish4)
-        sideDish4.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                orderViewModel.addFood(resources.getString(R.string.soup1))
-            } else {
-                orderViewModel.removeFood(resources.getString(R.string.soup1))
-            }
-        }
         val sideDish5 = view.findViewById<CheckBox>(R.id.sideDish5)
-        sideDish5.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                orderViewModel.addFood(resources.getString(R.string.soup2))
-            } else {
-                orderViewModel.removeFood(resources.getString(R.string.soup2))
-            }
-        }
         val sideDish6 = view.findViewById<CheckBox>(R.id.sideDish6)
-        sideDish6.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                orderViewModel.addFood(resources.getString(R.string.soup3))
-            } else {
-                orderViewModel.removeFood(resources.getString(R.string.soup3))
+
+        val sideDishes = mapOf(
+            sideDish1 to resources.getString(R.string.salad1),
+            sideDish2 to resources.getString(R.string.salad2),
+            sideDish3 to resources.getString(R.string.salad3),
+            sideDish4 to resources.getString(R.string.soup1),
+            sideDish5 to resources.getString(R.string.soup2),
+            sideDish6 to resources.getString(R.string.soup3)
+        )
+
+        orderViewModel.selectedFoods.observe(viewLifecycleOwner) { selectedFoods ->
+            sideDishes.forEach { (checkBox, foodName) ->
+                checkBox.isChecked = selectedFoods.contains(foodName)
             }
         }
-        val nextButton = view.findViewById<Button>(R.id.nextBtn)
-        nextButton.setOnClickListener {
+
+        sideDishes.forEach { (checkBox, foodName) ->
+            checkBox.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) orderViewModel.addFood(foodName)
+                else orderViewModel.removeFood(foodName)
+            }
+        }
+
+        view.findViewById<Button>(R.id.nextBtn).setOnClickListener {
             findNavController().navigate(R.id.sideDish_to_dessertFragment)
         }
-        val prevButton = view.findViewById<Button>(R.id.previousBtn)
-        prevButton.setOnClickListener {
+        view.findViewById<Button>(R.id.previousBtn).setOnClickListener {
             findNavController().navigate(R.id.sideDish_to_mainDishFragment)
         }
+
         return view
     }
 }
